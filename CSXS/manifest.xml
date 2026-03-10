@@ -3,7 +3,7 @@
     Version="9.0"
     ExtensionBundleId="com.engemede.aekittools"
     ExtensionBundleVersion="1.0.0"
-    ExtensionBundleName="AeKitTools">
+    ExtensionBundleName="AeToolsKit">
     <ExtensionList>
         <Extension Id="com.engemede.aekittools.panel" Version="1.0.0" />
     </ExtensionList>
@@ -34,7 +34,7 @@
                 </Lifecycle>
                 <UI>
                     <Type>Panel</Type>
-                    <Menu>AK</Menu>
+                    <Menu>AeToolsKit</Menu>
                     <Geometry>
                         <Size>
                             <Width>72</Width>

@@ -1,4 +1,4 @@
-# AeKitTools
+# AeToolsKit
 
 Painel CEP para Adobe After Effects com layout vertical inspirado no mockup enviado.
 

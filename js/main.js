@@ -10,7 +10,7 @@
         bindButtons();
         applyHostTheme();
         watchThemeChanges();
-        showStatus("AeKitTools pronto.", "success", 1800);
+        showStatus("AeToolsKit pronto.", "success", 1800);
     }
 
     function bindButtons() {

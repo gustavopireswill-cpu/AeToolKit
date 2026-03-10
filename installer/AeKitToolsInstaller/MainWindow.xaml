@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="AeKitTools Installer"
+        Title="AeToolsKit Installer"
         Width="1180"
         Height="760"
         MinWidth="1020"
@@ -290,7 +290,7 @@
                         </Border>
 
                         <StackPanel>
-                            <TextBlock Text="AeKitTools Installer"
+                            <TextBlock Text="AeToolsKit Installer"
                                        FontFamily="Bahnschrift"
                                        FontSize="16"
                                        FontWeight="SemiBold"
@@ -341,7 +341,7 @@
                                    LineHeight="60"
                                    TextWrapping="Wrap">
                             <Run Text="Instale o " Foreground="{StaticResource TextPrimaryBrush}" />
-                            <Run Text="AeKitTools" Foreground="#FF0F9CE8" />
+                            <Run Text="AeToolsKit" Foreground="#FF0F9CE8" />
                             <LineBreak />
                             <Run Text="com visual de produto." Foreground="{StaticResource TextPrimaryBrush}" />
                         </TextBlock>
@@ -638,7 +638,7 @@
 
                                         <Border Margin="0,18,0,0"
                                                 Style="{StaticResource InsetCardStyle}">
-                                            <TextBlock Text="Depois de instalar, abra ou reinicie o After Effects e procure por AK em Janela > Extensoes."
+                                            <TextBlock Text="Depois de instalar, abra ou reinicie o After Effects e procure por AeToolsKit em Janela > Extensoes."
                                                        TextWrapping="Wrap"
                                                        Foreground="{StaticResource TextSecondaryBrush}" />
                                         </Border>
@@ -715,7 +715,7 @@
                                                FontWeight="SemiBold"
                                                Foreground="{StaticResource TextPrimaryBrush}" />
                                     <TextBlock Margin="0,6,0,0"
-                                               Text="Depois de instalar, abra ou reinicie o After Effects e procure por AeKitTools em Janela > Extensoes."
+                                               Text="Depois de instalar, abra ou reinicie o After Effects e procure por AeToolsKit em Janela > Extensoes."
                                                TextWrapping="Wrap"
                                                Foreground="{StaticResource TextSecondaryBrush}" />
                                 </StackPanel>
