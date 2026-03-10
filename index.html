@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AeKitTools</title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+    <div class="ambient ambient-top"></div>
+    <div class="ambient ambient-bottom"></div>
+
+    <main class="panel-shell">
+        <aside class="toolbar" aria-label="Ferramentas AeKitTools">
+            <button class="tool-button" type="button" data-action="precomposeSelected" data-label="Precompor" title="Precompor">
+                <span class="icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" focusable="false">
+                        <path d="M4 7h16M4 12h16M4 17h16M7 4l-3 3 3 3M17 4l3 3-3 3" />
+                    </svg>
+                </span>
+                <span class="tooltip">
+                    <strong>Precompor</strong>
+                    <small>Cria uma precomp com as camadas selecionadas.</small>
+                </span>
+            </button>
+
+            <button class="tool-button" type="button" data-action="deleteSelected" data-label="Excluir selecao" title="Excluir seleção">
+                <span class="icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" focusable="false">
+                        <path d="M5 7h14M9 7V4h6v3M7 7l1 12h8l1-12M10 10v6M14 10v6" />
+                    </svg>
+                </span>
+                <span class="tooltip">
+                    <strong>Excluir seleção</strong>
+                    <small>Remove as camadas selecionadas na timeline.</small>
+                </span>
+            </button>
+
+            <button class="tool-button" type="button" data-action="createCamera3D" data-label="Criar camera 3D" title="Criar câmera 3D">
+                <span class="icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" focusable="false">
+                        <path d="M4 9h4l2-3h4l2 3h4v10H4zM12 17a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM19 7h2v3" />
+                    </svg>
+                </span>
+                <span class="tooltip">
+                    <strong>Criar câmera 3D</strong>
+                    <small>Adiciona uma câmera centralizada na composição ativa.</small>
+                </span>
+            </button>
+
+            <button class="tool-button" type="button" data-action="organizeProject" data-label="Organizar projeto" title="Organizar projeto">
+                <span class="icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" focusable="false">
+                        <path d="M4 6h6l2 2h8v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zM8 11h8M8 15h5" />
+                    </svg>
+                </span>
+                <span class="tooltip">
+                    <strong>Organizar projeto</strong>
+                    <small>Separa comps, precomps, mídias e sólidos em pastas.</small>
+                </span>
+            </button>
+
+            <button class="tool-button" type="button" data-action="createSolidWithPicker" data-label="Criar solido" title="Criar sólido">
+                <span class="icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" focusable="false">
+                        <path d="M5 15l7-9 7 7-6 6-7-4zM14 18l2 2M18 12l2-2" />
+                    </svg>
+                </span>
+                <span class="tooltip">
+                    <strong>Criar sólido</strong>
+                    <small>Abre o seletor de cor e cria um sólido na comp atual.</small>
+                </span>
+            </button>
+
+            <button class="tool-button" type="button" data-action="clearCache" data-label="Limpar cache" title="Limpar cache">
+                <span class="icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" focusable="false">
+                        <path d="M6 6c0-1.7 2.7-3 6-3s6 1.3 6 3-2.7 3-6 3-6-1.3-6-3zm0 6c0 1.7 2.7 3 6 3s6-1.3 6-3M6 6v12c0 1.7 2.7 3 6 3s6-1.3 6-3V6" />
+                    </svg>
+                </span>
+                <span class="tooltip">
+                    <strong>Limpar cache</strong>
+                    <small>Purga os caches disponíveis do After Effects.</small>
+                </span>
+            </button>
+        </aside>
+    </main>
+
+    <div class="status" id="status" aria-live="polite"></div>
+
+    <script src="./js/cep.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>

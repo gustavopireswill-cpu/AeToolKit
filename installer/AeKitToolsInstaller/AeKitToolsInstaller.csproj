@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <AssemblyName>AeKitToolsInstaller</AssemblyName>
+    <RootNamespace>AeKitToolsInstaller</RootNamespace>
+    <ApplicationIcon>Assets\AeKitTools.ico</ApplicationIcon>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\AeKitTools.ico" />
+    <Resource Include="Assets\AeKitTools.png" />
+    <EmbeddedResource Include="..\..\.debug">
+      <LogicalName>Payload/.debug</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\index.html">
+      <LogicalName>Payload/index.html</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\CSXS\manifest.xml">
+      <LogicalName>Payload/CSXS/manifest.xml</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\css\styles.css">
+      <LogicalName>Payload/css/styles.css</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\js\cep.js">
+      <LogicalName>Payload/js/cep.js</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\js\main.js">
+      <LogicalName>Payload/js/main.js</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\jsx\hostscript.jsx">
+      <LogicalName>Payload/jsx/hostscript.jsx</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

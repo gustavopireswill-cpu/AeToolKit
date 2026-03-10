@@ -1,0 +1,187 @@
+:root {
+    --app-bg: transparent;
+    --rail-bg: rgba(40, 40, 42, 0.94);
+    --rail-bg-top: rgba(56, 56, 58, 0.96);
+    --accent: #8f5fff;
+    --accent-soft: rgba(143, 95, 255, 0.35);
+    --text: rgba(255, 255, 255, 0.94);
+    --muted: rgba(255, 255, 255, 0.68);
+    --border: rgba(255, 255, 255, 0.1);
+    --shell-width: clamp(58px, calc(100vw - 8px), 92px);
+    --shell-padding-x: clamp(0px, 1.5vw, 10px);
+    --toolbar-gap: clamp(8px, 1.8vh, 14px);
+    --toolbar-radius: clamp(18px, 4vw, 24px);
+    --toolbar-padding-y: clamp(12px, 2.4vh, 20px);
+    --toolbar-padding-x: clamp(3px, 1vw, 10px);
+    --button-size: clamp(44px, calc(100vw - 14px), 58px);
+    --button-radius: clamp(14px, 3vw, 18px);
+    --icon-size: clamp(20px, calc(var(--button-size) * 0.46), 26px);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    font-family: "Segoe UI", Tahoma, sans-serif;
+    background: transparent;
+    color: var(--text);
+}
+
+body {
+    position: relative;
+    background: transparent;
+}
+
+.ambient {
+    display: none;
+}
+
+.panel-shell {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: stretch;
+    width: 100%;
+    height: 100%;
+    padding: 8px var(--shell-padding-x);
+}
+
+.toolbar {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: var(--toolbar-gap);
+    width: var(--shell-width);
+    min-width: var(--shell-width);
+    padding: var(--toolbar-padding-y) var(--toolbar-padding-x);
+    border-radius: var(--toolbar-radius);
+    border: 1px solid var(--border);
+    background: linear-gradient(180deg, var(--rail-bg-top), var(--rail-bg));
+    box-shadow:
+        0 24px 48px rgba(0, 0, 0, 0.45),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.tool-button {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: var(--button-size);
+    height: var(--button-size);
+    padding: 0;
+    border: 1.5px solid var(--accent);
+    border-radius: var(--button-radius);
+    background: linear-gradient(180deg, rgba(35, 35, 37, 0.9), rgba(17, 17, 18, 0.9));
+    color: var(--text);
+    cursor: pointer;
+    box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.05),
+        0 10px 18px rgba(0, 0, 0, 0.35),
+        0 0 18px var(--accent-soft);
+    transition:
+        transform 140ms ease,
+        box-shadow 180ms ease,
+        border-color 180ms ease,
+        background-color 180ms ease;
+    -webkit-appearance: none;
+}
+
+.tool-button:hover {
+    transform: translateX(-2px);
+    box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.08),
+        0 14px 24px rgba(0, 0, 0, 0.45),
+        0 0 24px var(--accent-soft);
+}
+
+.tool-button:focus {
+    outline: none;
+    box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.12),
+        0 14px 24px rgba(0, 0, 0, 0.45),
+        0 0 0 3px rgba(255, 255, 255, 0.12),
+        0 0 28px var(--accent-soft);
+}
+
+.tool-button:active,
+.tool-button.is-busy {
+    transform: translateX(0);
+    box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.04),
+        0 6px 12px rgba(0, 0, 0, 0.35),
+        0 0 16px var(--accent-soft);
+}
+
+.tool-button.is-busy {
+    cursor: progress;
+}
+
+.icon {
+    display: grid;
+    place-items: center;
+    width: var(--icon-size);
+    height: var(--icon-size);
+}
+
+.icon svg {
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.tooltip {
+    display: none;
+}
+
+.status {
+    display: none;
+}
+
+.status.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.status.is-error {
+    border-color: rgba(255, 94, 94, 0.32);
+}
+
+.status.is-success {
+    border-color: rgba(68, 214, 122, 0.28);
+}
+
+@media (min-width: 120px) {
+    :root {
+        --shell-width: clamp(64px, 26vw, 108px);
+        --button-size: clamp(46px, 18vw, 60px);
+        --toolbar-padding-x: clamp(4px, 1.4vw, 12px);
+        --toolbar-padding-y: clamp(14px, 2.4vh, 24px);
+    }
+}
+
+@media (min-width: 180px) {
+    :root {
+        --shell-width: clamp(72px, 22vw, 116px);
+        --toolbar-gap: clamp(10px, 1.7vh, 16px);
+        --button-size: clamp(50px, 16vw, 62px);
+    }
+}
+
+@media (max-height: 540px) {
+    :root {
+        --toolbar-gap: 8px;
+        --toolbar-padding-y: 10px;
+        --button-size: clamp(40px, calc(100vh / 10), 48px);
+        --icon-size: clamp(18px, calc(var(--button-size) * 0.44), 22px);
+    }
+}
