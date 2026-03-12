@@ -1,6 +1,6 @@
 # AeToolsKit
 
-Painel CEP para Adobe After Effects com layout vertical inspirado no mockup enviado.
+Painel CEP para Adobe After Effects com layout vertical glass no painel e no instalador.
 
 ## Funcoes
 
@@ -25,13 +25,14 @@ Painel CEP para Adobe After Effects com layout vertical inspirado no mockup envi
 1. Execute o instalador Windows como administrador ou clique em instalar e confirme o UAC.
 2. O instalador baixa a extensao do GitHub e publica em `%CommonProgramFiles(x86)%\\Adobe\\CEP\\extensions\\AeKitTools`.
 3. Se desejar, ele habilita o `PlayerDebugMode` automaticamente.
-4. Abra o After Effects e acesse `Janela > Extensoes > AK`.
+4. Abra o After Effects e acesse `Janela > Extensoes > AeToolsKit`.
 
 ## Instalador Windows
 
 - O projeto inclui um instalador desktop em `installer/AeKitToolsInstaller`.
 - Para gerar um `.exe` unico em `dist/AeKitToolsInstaller`, execute `.\build-installer.ps1`.
 - O executavel instala a extensao em `%CommonProgramFiles(x86)%\\Adobe\\CEP\\extensions\\AeKitTools`, baixa o payload do GitHub e pode habilitar o `PlayerDebugMode` automaticamente.
+- O payload embutido do instalador reaproveita os mesmos arquivos do painel (`index.html`, `css/styles.css`, `js/main.js`), entao o layout novo da extensao segue junto no fallback local e no update via GitHub.
 
 ## Observacoes
 

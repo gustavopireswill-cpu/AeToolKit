@@ -44,7 +44,7 @@ public sealed class InstallerService
 
     private readonly Assembly assembly = typeof(InstallerService).Assembly;
 
-    public string PayloadSummaryText => "Atualizacao via GitHub";
+    public string PayloadSummaryText => "GitHub sync + fallback local";
 
     public EnvironmentSnapshot InspectEnvironment()
     {

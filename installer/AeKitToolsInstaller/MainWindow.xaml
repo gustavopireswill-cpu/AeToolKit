@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         Title="AeToolsKit Installer"
-        Width="1180"
-        Height="760"
-        MinWidth="1020"
+        Width="1240"
+        Height="780"
+        MinWidth="1080"
         MinHeight="700"
         Icon="Assets/AeKitTools.ico"
         Background="Transparent"
@@ -20,41 +20,53 @@
         <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
 
         <LinearGradientBrush x:Key="WindowBackgroundBrush" StartPoint="0,0" EndPoint="1,1">
-            <GradientStop Color="#FFF7FBFF" Offset="0" />
-            <GradientStop Color="#FFF0F5FC" Offset="0.58" />
-            <GradientStop Color="#FFEAF0F8" Offset="1" />
+            <GradientStop Color="#FF0B1016" Offset="0" />
+            <GradientStop Color="#FF121923" Offset="0.52" />
+            <GradientStop Color="#FF0E141C" Offset="1" />
         </LinearGradientBrush>
 
         <LinearGradientBrush x:Key="PrimaryActionBrush" StartPoint="0,0" EndPoint="1,1">
-            <GradientStop Color="#FF0F9CE8" Offset="0" />
-            <GradientStop Color="#FF3ACBAA" Offset="1" />
+            <GradientStop Color="#FF33B6FF" Offset="0" />
+            <GradientStop Color="#FF0A84FF" Offset="1" />
         </LinearGradientBrush>
 
-        <SolidColorBrush x:Key="TextPrimaryBrush" Color="#FF0F172A" />
-        <SolidColorBrush x:Key="TextSecondaryBrush" Color="#FF526178" />
-        <SolidColorBrush x:Key="SurfaceBorderBrush" Color="#66FFFFFF" />
+        <SolidColorBrush x:Key="TextPrimaryBrush" Color="#FFF5F7FB" />
+        <SolidColorBrush x:Key="TextSecondaryBrush" Color="#FFBCC5D2" />
+        <SolidColorBrush x:Key="TextMutedBrush" Color="#FF8792A4" />
+        <SolidColorBrush x:Key="SurfaceBorderBrush" Color="#22FFFFFF" />
+        <SolidColorBrush x:Key="SoftSurfaceBorderBrush" Color="#14FFFFFF" />
 
         <Style x:Key="GlassCardStyle" TargetType="Border">
-            <Setter Property="Background" Value="#BFFFFFFF" />
+            <Setter Property="Background" Value="#78141C26" />
             <Setter Property="BorderBrush" Value="{StaticResource SurfaceBorderBrush}" />
             <Setter Property="BorderThickness" Value="1" />
-            <Setter Property="CornerRadius" Value="26" />
+            <Setter Property="CornerRadius" Value="28" />
             <Setter Property="Padding" Value="24" />
             <Setter Property="SnapsToDevicePixels" Value="True" />
         </Style>
 
         <Style x:Key="InsetCardStyle" TargetType="Border" BasedOn="{StaticResource GlassCardStyle}">
-            <Setter Property="Background" Value="#99FFFFFF" />
+            <Setter Property="Background" Value="#4D18212D" />
+            <Setter Property="BorderBrush" Value="{StaticResource SoftSurfaceBorderBrush}" />
             <Setter Property="CornerRadius" Value="22" />
             <Setter Property="Padding" Value="18" />
+        </Style>
+
+        <Style x:Key="PillBorderStyle" TargetType="Border">
+            <Setter Property="Background" Value="#14FFFFFF" />
+            <Setter Property="BorderBrush" Value="{StaticResource SurfaceBorderBrush}" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="CornerRadius" Value="999" />
+            <Setter Property="Padding" Value="14,8" />
+            <Setter Property="Margin" Value="0,0,10,10" />
         </Style>
 
         <Style x:Key="WindowActionButtonStyle" TargetType="Button">
             <Setter Property="Width" Value="34" />
             <Setter Property="Height" Value="34" />
             <Setter Property="Foreground" Value="{StaticResource TextPrimaryBrush}" />
-            <Setter Property="Background" Value="#88FFFFFF" />
-            <Setter Property="BorderBrush" Value="#1F0F172A" />
+            <Setter Property="Background" Value="#14FFFFFF" />
+            <Setter Property="BorderBrush" Value="{StaticResource SurfaceBorderBrush}" />
             <Setter Property="BorderThickness" Value="1" />
             <Setter Property="FontSize" Value="13" />
             <Setter Property="Template">
@@ -70,8 +82,8 @@
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter TargetName="ChromeBorder" Property="Background" Value="#FFFFFFFF" />
-                                <Setter TargetName="ChromeBorder" Property="BorderBrush" Value="#33193A5A" />
+                                <Setter TargetName="ChromeBorder" Property="Background" Value="#1FFFFFFF" />
+                                <Setter TargetName="ChromeBorder" Property="BorderBrush" Value="#30FFFFFF" />
                             </Trigger>
                             <Trigger Property="IsPressed" Value="True">
                                 <Setter TargetName="ChromeBorder" Property="Opacity" Value="0.82" />
@@ -85,21 +97,14 @@
         <Style x:Key="PrimaryButtonStyle" TargetType="Button">
             <Setter Property="Foreground" Value="White" />
             <Setter Property="Background" Value="{StaticResource PrimaryActionBrush}" />
-            <Setter Property="BorderBrush" Value="#33000000" />
+            <Setter Property="BorderBrush" Value="#22000000" />
             <Setter Property="BorderThickness" Value="1" />
-            <Setter Property="FontFamily" Value="Bahnschrift" />
+            <Setter Property="FontFamily" Value="Segoe UI Semibold" />
             <Setter Property="FontSize" Value="15" />
-            <Setter Property="FontWeight" Value="SemiBold" />
             <Setter Property="MinHeight" Value="54" />
-            <Setter Property="MinWidth" Value="210" />
+            <Setter Property="MinWidth" Value="220" />
             <Setter Property="Padding" Value="24,0" />
             <Setter Property="Cursor" Value="Hand" />
-            <Setter Property="RenderTransformOrigin" Value="0.5,0.5" />
-            <Setter Property="RenderTransform">
-                <Setter.Value>
-                    <ScaleTransform />
-                </Setter.Value>
-            </Setter>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
@@ -116,10 +121,10 @@
                                 <Setter TargetName="PrimaryBorder" Property="Opacity" Value="0.94" />
                             </Trigger>
                             <Trigger Property="IsPressed" Value="True">
-                                <Setter TargetName="PrimaryBorder" Property="Opacity" Value="0.86" />
+                                <Setter TargetName="PrimaryBorder" Property="Opacity" Value="0.84" />
                             </Trigger>
                             <Trigger Property="IsEnabled" Value="False">
-                                <Setter TargetName="PrimaryBorder" Property="Opacity" Value="0.5" />
+                                <Setter TargetName="PrimaryBorder" Property="Opacity" Value="0.48" />
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
@@ -129,13 +134,13 @@
 
         <Style x:Key="SecondaryButtonStyle" TargetType="Button">
             <Setter Property="Foreground" Value="{StaticResource TextPrimaryBrush}" />
-            <Setter Property="Background" Value="#CCFFFFFF" />
-            <Setter Property="BorderBrush" Value="#1A0F172A" />
+            <Setter Property="Background" Value="#16FFFFFF" />
+            <Setter Property="BorderBrush" Value="{StaticResource SurfaceBorderBrush}" />
             <Setter Property="BorderThickness" Value="1" />
-            <Setter Property="FontFamily" Value="Bahnschrift" />
+            <Setter Property="FontFamily" Value="Segoe UI Semibold" />
             <Setter Property="FontSize" Value="14" />
             <Setter Property="MinHeight" Value="54" />
-            <Setter Property="MinWidth" Value="132" />
+            <Setter Property="MinWidth" Value="136" />
             <Setter Property="Padding" Value="22,0" />
             <Setter Property="Cursor" Value="Hand" />
             <Setter Property="Template">
@@ -151,8 +156,8 @@
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter TargetName="SecondaryBorder" Property="Background" Value="#FFFFFFFF" />
-                                <Setter TargetName="SecondaryBorder" Property="BorderBrush" Value="#25193A5A" />
+                                <Setter TargetName="SecondaryBorder" Property="Background" Value="#22FFFFFF" />
+                                <Setter TargetName="SecondaryBorder" Property="BorderBrush" Value="#32FFFFFF" />
                             </Trigger>
                             <Trigger Property="IsPressed" Value="True">
                                 <Setter TargetName="SecondaryBorder" Property="Opacity" Value="0.82" />
@@ -164,63 +169,136 @@
         </Style>
 
         <Style x:Key="StatusCardStyle" TargetType="Border" BasedOn="{StaticResource InsetCardStyle}">
-            <Setter Property="BorderBrush" Value="#160F172A" />
+            <Setter Property="BorderBrush" Value="#22FFFFFF" />
             <Style.Triggers>
                 <DataTrigger Binding="{Binding StatusTone}" Value="working">
-                    <Setter Property="Background" Value="#FFF0F9FF" />
-                    <Setter Property="BorderBrush" Value="#5520A4F3" />
+                    <Setter Property="Background" Value="#331E3A53" />
+                    <Setter Property="BorderBrush" Value="#5533B6FF" />
                 </DataTrigger>
                 <DataTrigger Binding="{Binding StatusTone}" Value="success">
-                    <Setter Property="Background" Value="#FFF0FDF6" />
-                    <Setter Property="BorderBrush" Value="#5534D399" />
+                    <Setter Property="Background" Value="#3322362B" />
+                    <Setter Property="BorderBrush" Value="#5549D17D" />
                 </DataTrigger>
                 <DataTrigger Binding="{Binding StatusTone}" Value="error">
-                    <Setter Property="Background" Value="#FFFFF4F4" />
-                    <Setter Property="BorderBrush" Value="#55FB7185" />
+                    <Setter Property="Background" Value="#333B2024" />
+                    <Setter Property="BorderBrush" Value="#55F87171" />
                 </DataTrigger>
             </Style.Triggers>
         </Style>
 
+        <Style x:Key="PreviewToolStyle" TargetType="Border">
+            <Setter Property="Width" Value="34" />
+            <Setter Property="Height" Value="34" />
+            <Setter Property="CornerRadius" Value="10" />
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Margin" Value="0,0,0,10" />
+        </Style>
+
         <Style TargetType="CheckBox">
-            <Setter Property="FontSize" Value="14" />
             <Setter Property="Foreground" Value="{StaticResource TextPrimaryBrush}" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="CheckBox">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Border x:Name="CheckBorder"
+                                    Width="18"
+                                    Height="18"
+                                    CornerRadius="6"
+                                    BorderBrush="{StaticResource SurfaceBorderBrush}"
+                                    BorderThickness="1"
+                                    Background="#12FFFFFF"
+                                    VerticalAlignment="Center">
+                                <Path x:Name="CheckGlyph"
+                                      Data="M 4 9 L 8 13 L 14 5"
+                                      Stroke="White"
+                                      StrokeThickness="2"
+                                      StrokeStartLineCap="Round"
+                                      StrokeEndLineCap="Round"
+                                      StrokeLineJoin="Round"
+                                      Visibility="Collapsed" />
+                            </Border>
+
+                            <ContentPresenter Grid.Column="1"
+                                              Margin="10,0,0,0"
+                                              VerticalAlignment="Center" />
+                        </Grid>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="CheckBorder" Property="BorderBrush" Value="#33FFFFFF" />
+                                <Setter TargetName="CheckBorder" Property="Background" Value="#18FFFFFF" />
+                            </Trigger>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter TargetName="CheckBorder" Property="Background" Value="#660A84FF" />
+                                <Setter TargetName="CheckBorder" Property="BorderBrush" Value="#990A84FF" />
+                                <Setter TargetName="CheckGlyph" Property="Visibility" Value="Visible" />
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="CheckBorder" Property="Opacity" Value="0.4" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
         </Style>
 
         <Style TargetType="ProgressBar">
             <Setter Property="Height" Value="6" />
-            <Setter Property="Background" Value="#1A0F172A" />
-            <Setter Property="Foreground" Value="#FF22B8CF" />
+            <Setter Property="Background" Value="#1AFFFFFF" />
+            <Setter Property="Foreground" Value="#FF0A84FF" />
             <Setter Property="BorderThickness" Value="0" />
         </Style>
     </Window.Resources>
 
     <Grid>
         <Canvas IsHitTestVisible="False">
-            <Ellipse Width="360"
-                     Height="360"
-                     Canvas.Left="-88"
-                     Canvas.Top="-70"
-                     Opacity="0.8">
+            <Ellipse Width="420"
+                     Height="420"
+                     Canvas.Left="-110"
+                     Canvas.Top="-110"
+                     Opacity="0.75">
                 <Ellipse.Fill>
                     <RadialGradientBrush GradientOrigin="0.35,0.35">
-                        <GradientStop Color="#8022B8CF" Offset="0" />
-                        <GradientStop Color="#0022B8CF" Offset="1" />
+                        <GradientStop Color="#8C0A84FF" Offset="0" />
+                        <GradientStop Color="#000A84FF" Offset="1" />
                     </RadialGradientBrush>
                 </Ellipse.Fill>
                 <Ellipse.Effect>
-                    <BlurEffect Radius="60" />
+                    <BlurEffect Radius="72" />
                 </Ellipse.Effect>
             </Ellipse>
 
-            <Ellipse Width="300"
-                     Height="300"
-                     Canvas.Right="-34"
-                     Canvas.Bottom="-52"
-                     Opacity="0.75">
+            <Ellipse Width="360"
+                     Height="360"
+                     Canvas.Right="-60"
+                     Canvas.Bottom="-70"
+                     Opacity="0.55">
                 <Ellipse.Fill>
-                    <RadialGradientBrush GradientOrigin="0.4,0.4">
-                        <GradientStop Color="#6634D399" Offset="0" />
-                        <GradientStop Color="#0034D399" Offset="1" />
+                    <RadialGradientBrush GradientOrigin="0.45,0.45">
+                        <GradientStop Color="#6637C8FF" Offset="0" />
+                        <GradientStop Color="#0037C8FF" Offset="1" />
+                    </RadialGradientBrush>
+                </Ellipse.Fill>
+                <Ellipse.Effect>
+                    <BlurEffect Radius="68" />
+                </Ellipse.Effect>
+            </Ellipse>
+
+            <Ellipse Width="260"
+                     Height="260"
+                     Canvas.Left="420"
+                     Canvas.Top="520"
+                     Opacity="0.24">
+                <Ellipse.Fill>
+                    <RadialGradientBrush GradientOrigin="0.5,0.5">
+                        <GradientStop Color="#55FFFFFF" Offset="0" />
+                        <GradientStop Color="#00FFFFFF" Offset="1" />
                     </RadialGradientBrush>
                 </Ellipse.Fill>
                 <Ellipse.Effect>
@@ -231,14 +309,14 @@
 
         <Border Margin="18"
                 Background="{StaticResource WindowBackgroundBrush}"
-                BorderBrush="#B2FFFFFF"
+                BorderBrush="#26FFFFFF"
                 BorderThickness="1"
-                CornerRadius="32">
+                CornerRadius="34">
             <Border.Effect>
-                <DropShadowEffect BlurRadius="50"
+                <DropShadowEffect BlurRadius="46"
                                   ShadowDepth="18"
-                                  Opacity="0.18"
-                                  Color="#FF0F172A" />
+                                  Opacity="0.42"
+                                  Color="#FF000000" />
             </Border.Effect>
 
             <Grid>
@@ -248,7 +326,7 @@
                 </Grid.RowDefinitions>
 
                 <Grid Grid.Row="0"
-                      Margin="28,22,22,0"
+                      Margin="30,24,24,0"
                       MouseLeftButtonDown="Header_MouseLeftButtonDown">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
@@ -257,21 +335,16 @@
 
                     <StackPanel Orientation="Horizontal"
                                 VerticalAlignment="Center">
-                        <Border Width="42"
-                                Height="42"
-                                CornerRadius="21"
-                                Margin="0,0,14,0">
-                            <Border.Background>
-                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                                    <GradientStop Color="#FF0F9CE8" Offset="0" />
-                                    <GradientStop Color="#FF34D399" Offset="1" />
-                                </LinearGradientBrush>
-                            </Border.Background>
+                        <Border Width="46"
+                                Height="46"
+                                CornerRadius="23"
+                                Margin="0,0,14,0"
+                                Background="{StaticResource PrimaryActionBrush}">
                             <Border.Effect>
-                                <DropShadowEffect BlurRadius="22"
+                                <DropShadowEffect BlurRadius="26"
                                                   ShadowDepth="8"
-                                                  Opacity="0.18"
-                                                  Color="#FF0F9CE8" />
+                                                  Opacity="0.24"
+                                                  Color="#FF0A84FF" />
                             </Border.Effect>
                             <Grid>
                                 <Ellipse Width="18"
@@ -279,7 +352,7 @@
                                          Fill="#CCFFFFFF"
                                          HorizontalAlignment="Left"
                                          VerticalAlignment="Top"
-                                         Margin="10,8,0,0" />
+                                         Margin="11,9,0,0" />
                                 <Ellipse Width="10"
                                          Height="10"
                                          Fill="#55FFFFFF"
@@ -291,23 +364,22 @@
 
                         <StackPanel>
                             <TextBlock Text="AeToolsKit Installer"
-                                       FontFamily="Bahnschrift"
+                                       FontFamily="Segoe UI Semibold"
                                        FontSize="16"
-                                       FontWeight="SemiBold"
                                        Foreground="{StaticResource TextPrimaryBrush}" />
-                            <TextBlock Text="Deploy premium para o painel do After Effects"
+                            <TextBlock Text="Executavel com deploy GitHub e visual glass"
                                        FontSize="12"
-                                       Foreground="{StaticResource TextSecondaryBrush}" />
+                                       Foreground="{StaticResource TextMutedBrush}" />
                         </StackPanel>
                     </StackPanel>
 
                     <StackPanel Grid.Column="1"
                                 Orientation="Horizontal">
-                        <Button Content="&#8211;"
+                        <Button Content="&#x2212;"
                                 Style="{StaticResource WindowActionButtonStyle}"
                                 Margin="0,0,8,0"
                                 Click="MinimizeButton_Click" />
-                        <Button Content="X"
+                        <Button Content="&#x00D7;"
                                 Style="{StaticResource WindowActionButtonStyle}"
                                 Click="CloseButton_Click" />
                     </StackPanel>
@@ -316,34 +388,33 @@
                 <Grid Grid.Row="1"
                       Margin="30,24,30,30">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="1.02*" />
-                        <ColumnDefinition Width="1.18*" />
+                        <ColumnDefinition Width="0.98*" />
+                        <ColumnDefinition Width="1.12*" />
                     </Grid.ColumnDefinitions>
 
                     <StackPanel x:Name="HeroPanel"
                                 Margin="0,0,28,0"
                                 Opacity="0">
                         <Border Padding="12,8"
-                                Background="#99FFFFFF"
-                                BorderBrush="#66FFFFFF"
+                                Background="#16FFFFFF"
+                                BorderBrush="{StaticResource SurfaceBorderBrush}"
                                 BorderThickness="1"
                                 CornerRadius="999">
-                            <TextBlock Text="GitHub-backed installer"
-                                       FontFamily="Bahnschrift"
+                            <TextBlock Text="Novo layout do instalador"
                                        FontSize="12"
                                        Foreground="{StaticResource TextPrimaryBrush}" />
                         </Border>
 
                         <TextBlock Margin="0,22,0,0"
-                                   FontFamily="Bahnschrift"
+                                   FontFamily="Segoe UI Semibold"
                                    FontSize="54"
                                    FontWeight="SemiBold"
                                    LineHeight="60"
                                    TextWrapping="Wrap">
-                            <Run Text="Instale o " Foreground="{StaticResource TextPrimaryBrush}" />
-                            <Run Text="AeToolsKit" Foreground="#FF0F9CE8" />
+                            <Run Text="Atualize o " Foreground="{StaticResource TextPrimaryBrush}" />
+                            <Run Text="AeToolsKit" Foreground="#FF33B6FF" />
                             <LineBreak />
-                            <Run Text="com visual de produto." Foreground="{StaticResource TextPrimaryBrush}" />
+                            <Run Text="com o visual novo." Foreground="{StaticResource TextPrimaryBrush}" />
                         </TextBlock>
 
                         <TextBlock Margin="0,18,0,0"
@@ -351,143 +422,160 @@
                                    LineHeight="25"
                                    Foreground="{StaticResource TextSecondaryBrush}"
                                    TextWrapping="Wrap">
-                            O executavel baixa a extensao direto do GitHub, pede permissao de administrador no clique de instalar e publica o painel no CEP global do Windows.
+                            Este executavel instala a extensao no CEP global, baixa o payload do GitHub quando disponivel e agora acompanha o mesmo idioma visual glass do painel.
                         </TextBlock>
 
                         <WrapPanel Margin="0,24,0,0">
-                            <Border Margin="0,0,10,10"
-                                    Padding="14,8"
-                                    Background="#CCFFFFFF"
-                                    BorderBrush="#1A0F172A"
-                                    BorderThickness="1"
-                                    CornerRadius="999">
-                                <TextBlock Text="1 clique"
+                            <Border Style="{StaticResource PillBorderStyle}">
+                                <TextBlock Text="Atualizacao 1 clique"
                                            Foreground="{StaticResource TextPrimaryBrush}" />
                             </Border>
-                            <Border Margin="0,0,10,10"
-                                    Padding="14,8"
-                                    Background="#CCFFFFFF"
-                                    BorderBrush="#1A0F172A"
-                                    BorderThickness="1"
-                                    CornerRadius="999">
+                            <Border Style="{StaticResource PillBorderStyle}">
+                                <TextBlock Text="GitHub + fallback local"
+                                           Foreground="{StaticResource TextPrimaryBrush}" />
+                            </Border>
+                            <Border Style="{StaticResource PillBorderStyle}">
                                 <TextBlock Text="CEP debug opcional"
-                                           Foreground="{StaticResource TextPrimaryBrush}" />
-                            </Border>
-                            <Border Margin="0,0,10,10"
-                                    Padding="14,8"
-                                    Background="#CCFFFFFF"
-                                    BorderBrush="#1A0F172A"
-                                    BorderThickness="1"
-                                    CornerRadius="999">
-                                <TextBlock Text="{Binding PayloadSummary}"
                                            Foreground="{StaticResource TextPrimaryBrush}" />
                             </Border>
                         </WrapPanel>
 
-                        <Border Margin="0,34,0,0"
+                        <Border Margin="0,32,0,0"
                                 Style="{StaticResource GlassCardStyle}">
                             <StackPanel>
-                                <TextBlock Text="Fluxo do instalador"
-                                           FontFamily="Bahnschrift"
+                                <TextBlock Text="Preview do pacote"
                                            FontSize="12"
-                                           Foreground="#FF0F9CE8" />
-                                <TextBlock Margin="0,10,0,0"
-                                           Text="Tres etapas para colocar o painel no ar."
-                                           FontFamily="Bahnschrift"
+                                           Foreground="#FF33B6FF" />
+                                <TextBlock Margin="0,8,0,0"
+                                           Text="O instalador e o painel agora seguem a mesma linguagem visual."
+                                           FontFamily="Segoe UI Semibold"
                                            FontSize="24"
-                                           Foreground="{StaticResource TextPrimaryBrush}" />
+                                           Foreground="{StaticResource TextPrimaryBrush}"
+                                           TextWrapping="Wrap" />
 
-                                <Grid Margin="0,22,0,0">
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="Auto" />
-                                        <RowDefinition Height="Auto" />
-                                        <RowDefinition Height="Auto" />
-                                    </Grid.RowDefinitions>
+                                <Grid Margin="0,20,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="24" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
 
-                                    <Border Grid.Row="0"
-                                            Margin="0,0,0,12"
-                                            Style="{StaticResource InsetCardStyle}">
-                                        <Grid>
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="Auto" />
-                                                <ColumnDefinition Width="*" />
-                                            </Grid.ColumnDefinitions>
-                                            <TextBlock Text="01"
-                                                       FontFamily="Bahnschrift"
-                                                       FontSize="22"
-                                                       FontWeight="SemiBold"
-                                                       Foreground="#FF0F9CE8" />
-                                            <StackPanel Grid.Column="1"
-                                                        Margin="18,0,0,0">
-                                                <TextBlock Text="Download do GitHub"
-                                                           FontWeight="SemiBold"
+                                    <Border Width="72"
+                                            Padding="11,12"
+                                            Background="#8211171E"
+                                            BorderBrush="{StaticResource SurfaceBorderBrush}"
+                                            BorderThickness="1"
+                                            CornerRadius="22">
+                                        <StackPanel HorizontalAlignment="Center">
+                                            <Border Style="{StaticResource PreviewToolStyle}">
+                                                <TextBlock Text="▤"
+                                                           FontSize="16"
+                                                           HorizontalAlignment="Center"
+                                                           VerticalAlignment="Center"
                                                            Foreground="{StaticResource TextPrimaryBrush}" />
-                                                <TextBlock Text="O instalador busca o pacote mais recente do repositório e separa apenas os arquivos da extensao."
-                                                           Margin="0,4,0,0"
+                                            </Border>
+                                            <Border Style="{StaticResource PreviewToolStyle}">
+                                                <TextBlock Text="✕"
+                                                           FontSize="15"
+                                                           HorizontalAlignment="Center"
+                                                           VerticalAlignment="Center"
+                                                           Foreground="{StaticResource TextPrimaryBrush}" />
+                                            </Border>
+                                            <Border Style="{StaticResource PreviewToolStyle}">
+                                                <TextBlock Text="◉"
+                                                           FontSize="15"
+                                                           HorizontalAlignment="Center"
+                                                           VerticalAlignment="Center"
+                                                           Foreground="{StaticResource TextPrimaryBrush}" />
+                                            </Border>
+                                            <Border Style="{StaticResource PreviewToolStyle}">
+                                                <TextBlock Text="▣"
+                                                           FontSize="15"
+                                                           HorizontalAlignment="Center"
+                                                           VerticalAlignment="Center"
+                                                           Foreground="{StaticResource TextPrimaryBrush}" />
+                                            </Border>
+                                            <Border Style="{StaticResource PreviewToolStyle}"
+                                                    Background="#18FFFFFF">
+                                                <TextBlock Text="⬛"
+                                                           FontSize="14"
+                                                           HorizontalAlignment="Center"
+                                                           VerticalAlignment="Center"
+                                                           Foreground="{StaticResource TextPrimaryBrush}" />
+                                            </Border>
+                                            <Border Width="34"
+                                                    Height="34"
+                                                    CornerRadius="10"
+                                                    Background="Transparent">
+                                                <TextBlock Text="⛁"
+                                                           FontSize="14"
+                                                           HorizontalAlignment="Center"
+                                                           VerticalAlignment="Center"
+                                                           Foreground="{StaticResource TextPrimaryBrush}" />
+                                            </Border>
+                                        </StackPanel>
+                                    </Border>
+
+                                    <Grid Grid.Column="2">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+
+                                        <Border Grid.Row="0"
+                                                Margin="0,0,0,12"
+                                                Style="{StaticResource InsetCardStyle}">
+                                            <StackPanel>
+                                                <TextBlock Text="Painel atualizado"
+                                                           FontFamily="Segoe UI Semibold"
+                                                           FontSize="16"
+                                                           Foreground="{StaticResource TextPrimaryBrush}" />
+                                                <TextBlock Margin="0,6,0,0"
+                                                           Text="O css novo da extensao ja entra no payload local embutido e tambem sera o modelo consumido do GitHub."
                                                            TextWrapping="Wrap"
                                                            Foreground="{StaticResource TextSecondaryBrush}" />
                                             </StackPanel>
-                                        </Grid>
-                                    </Border>
+                                        </Border>
 
-                                    <Border Grid.Row="1"
-                                            Margin="0,0,0,12"
-                                            Style="{StaticResource InsetCardStyle}">
-                                        <Grid>
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="Auto" />
-                                                <ColumnDefinition Width="*" />
-                                            </Grid.ColumnDefinitions>
-                                            <TextBlock Text="02"
-                                                       FontFamily="Bahnschrift"
-                                                       FontSize="22"
-                                                       FontWeight="SemiBold"
-                                                       Foreground="#FF34D399" />
-                                            <StackPanel Grid.Column="1"
-                                                        Margin="18,0,0,0">
-                                                <TextBlock Text="Instalacao no CEP global"
-                                                           FontWeight="SemiBold"
+                                        <Border Grid.Row="1"
+                                                Margin="0,0,0,12"
+                                                Style="{StaticResource InsetCardStyle}">
+                                            <StackPanel>
+                                                <TextBlock Text="Fluxo de entrega"
+                                                           FontFamily="Segoe UI Semibold"
+                                                           FontSize="16"
                                                            Foreground="{StaticResource TextPrimaryBrush}" />
-                                                <TextBlock Text="O painel vai para %CommonProgramFiles(x86)%\Adobe\CEP\extensions\AeKitTools com sobrescrita segura."
-                                                           Margin="0,4,0,0"
+                                                <TextBlock Margin="0,6,0,0"
+                                                           Text="1. Baixa do GitHub. 2. Cai para o pacote local se necessario. 3. Publica no CEP global."
                                                            TextWrapping="Wrap"
                                                            Foreground="{StaticResource TextSecondaryBrush}" />
                                             </StackPanel>
-                                        </Grid>
-                                    </Border>
+                                        </Border>
 
-                                    <Border Grid.Row="2"
-                                            Style="{StaticResource InsetCardStyle}">
-                                        <Grid>
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="Auto" />
-                                                <ColumnDefinition Width="*" />
-                                            </Grid.ColumnDefinitions>
-                                            <TextBlock Text="03"
-                                                       FontFamily="Bahnschrift"
-                                                       FontSize="22"
-                                                       FontWeight="SemiBold"
-                                                       Foreground="#FFF97316" />
-                                            <StackPanel Grid.Column="1"
-                                                        Margin="18,0,0,0">
-                                                <TextBlock Text="AE pronto para abrir o painel"
-                                                           FontWeight="SemiBold"
+                                        <Border Grid.Row="2"
+                                                Style="{StaticResource InsetCardStyle}">
+                                            <StackPanel>
+                                                <TextBlock Text="Destino final"
+                                                           FontFamily="Segoe UI Semibold"
+                                                           FontSize="16"
                                                            Foreground="{StaticResource TextPrimaryBrush}" />
-                                                <TextBlock Text="Se o debug estiver ativo, a extensao aparece no menu do After Effects apos reiniciar o app."
-                                                           Margin="0,4,0,0"
+                                                <TextBlock Margin="0,6,0,0"
+                                                           Text="%CommonProgramFiles(x86)%\Adobe\CEP\extensions\AeKitTools"
                                                            TextWrapping="Wrap"
                                                            Foreground="{StaticResource TextSecondaryBrush}" />
                                             </StackPanel>
-                                        </Grid>
-                                    </Border>
+                                        </Border>
+                                    </Grid>
                                 </Grid>
                             </StackPanel>
                         </Border>
                     </StackPanel>
+
                     <Grid Grid.Column="1">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*" />
-                            <RowDefinition Height="0" />
+                            <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
 
                         <Border x:Name="ActionPanel"
@@ -504,20 +592,19 @@
                                               VerticalScrollBarVisibility="Auto"
                                               HorizontalScrollBarVisibility="Disabled">
                                     <StackPanel>
-                                        <TextBlock Text="Deploy controlado"
-                                                   FontFamily="Bahnschrift"
+                                        <TextBlock Text="Executavel"
                                                    FontSize="12"
-                                                   Foreground="#FF0F9CE8" />
+                                                   Foreground="#FF33B6FF" />
                                         <TextBlock Margin="0,8,0,0"
-                                                   Text="Tudo que voce precisa para instalar o painel."
-                                                   FontFamily="Bahnschrift"
-                                                   FontSize="24"
+                                                   Text="Instalacao sincronizada com o GitHub."
+                                                   FontFamily="Segoe UI Semibold"
+                                                   FontSize="26"
                                                    Foreground="{StaticResource TextPrimaryBrush}"
                                                    TextWrapping="Wrap" />
                                         <TextBlock Margin="0,8,0,0"
-                                                   Text="O instalador detecta o ambiente, baixa do GitHub, pede UAC quando necessario e instala para todos os usuarios."
+                                                   Text="O instalador detecta o ambiente, pede UAC quando necessario e regrava a extensao global com o layout mais recente."
                                                    FontSize="14"
-                                                   LineHeight="21"
+                                                   LineHeight="22"
                                                    TextWrapping="Wrap"
                                                    Foreground="{StaticResource TextSecondaryBrush}" />
 
@@ -525,9 +612,8 @@
                                                 Style="{StaticResource StatusCardStyle}">
                                             <StackPanel>
                                                 <TextBlock Text="{Binding StatusTitle}"
-                                                           FontFamily="Bahnschrift"
+                                                           FontFamily="Segoe UI Semibold"
                                                            FontSize="18"
-                                                           FontWeight="SemiBold"
                                                            Foreground="{StaticResource TextPrimaryBrush}" />
                                                 <TextBlock Margin="0,8,0,0"
                                                            Text="{Binding StatusMessage}"
@@ -548,17 +634,16 @@
                                                     Margin="0,0,8,0"
                                                     Style="{StaticResource InsetCardStyle}">
                                                 <StackPanel>
-                                                    <TextBlock Text="Modo de instalacao"
+                                                    <TextBlock Text="Modo"
                                                                FontSize="12"
-                                                               Foreground="#FF0F9CE8" />
+                                                               Foreground="#FF33B6FF" />
                                                     <TextBlock Margin="0,8,0,0"
                                                                Text="{Binding InstallationBadgeText}"
-                                                               FontFamily="Bahnschrift"
+                                                               FontFamily="Segoe UI Semibold"
                                                                FontSize="16"
-                                                               FontWeight="SemiBold"
                                                                Foreground="{StaticResource TextPrimaryBrush}" />
                                                     <TextBlock Margin="0,6,0,0"
-                                                               Text="Substitui a versao anterior no CEP global."
+                                                               Text="Substitui a versao anterior no CEP global com sobrescrita segura."
                                                                TextWrapping="Wrap"
                                                                Foreground="{StaticResource TextSecondaryBrush}" />
                                                 </StackPanel>
@@ -568,16 +653,18 @@
                                                     Margin="8,0,0,0"
                                                     Style="{StaticResource InsetCardStyle}">
                                                 <StackPanel>
-                                                    <TextBlock Text="After Effects"
+                                                    <TextBlock Text="Payload"
                                                                FontSize="12"
-                                                               Foreground="#FF0F9CE8" />
+                                                               Foreground="#FF33B6FF" />
                                                     <TextBlock Margin="0,8,0,0"
-                                                               Text="{Binding DetectionSummary}"
-                                                               FontFamily="Bahnschrift"
+                                                               Text="{Binding PayloadSummary}"
+                                                               FontFamily="Segoe UI Semibold"
                                                                FontSize="16"
-                                                               FontWeight="SemiBold"
-                                                               Foreground="{StaticResource TextPrimaryBrush}"
-                                                               TextWrapping="Wrap" />
+                                                               Foreground="{StaticResource TextPrimaryBrush}" />
+                                                    <TextBlock Margin="0,6,0,0"
+                                                               Text="GitHub primeiro, pacote local embutido como fallback."
+                                                               TextWrapping="Wrap"
+                                                               Foreground="{StaticResource TextSecondaryBrush}" />
                                                 </StackPanel>
                                             </Border>
                                         </Grid>
@@ -585,17 +672,27 @@
                                         <Border Margin="0,18,0,0"
                                                 Style="{StaticResource InsetCardStyle}">
                                             <StackPanel>
-                                                <TextBlock Text="Destino"
+                                                <TextBlock Text="Ambiente detectado"
                                                            FontSize="12"
-                                                           Foreground="#FF0F9CE8" />
+                                                           Foreground="#FF33B6FF" />
+                                                <TextBlock Margin="0,8,0,0"
+                                                           Text="{Binding DetectionSummary}"
+                                                           FontFamily="Segoe UI Semibold"
+                                                           FontSize="16"
+                                                           Foreground="{StaticResource TextPrimaryBrush}" />
+                                                <TextBlock Margin="0,14,0,0"
+                                                           Text="Destino de instalacao"
+                                                           FontSize="12"
+                                                           Foreground="{StaticResource TextMutedBrush}" />
                                                 <TextBlock Margin="0,8,0,0"
                                                            Text="{Binding InstallPath}"
                                                            TextWrapping="Wrap"
-                                                           Foreground="{StaticResource TextPrimaryBrush}" />
-                                                <TextBlock Margin="0,12,0,0"
+                                                           Foreground="{StaticResource TextSecondaryBrush}" />
+
+                                                <TextBlock Margin="0,14,0,0"
                                                            Text="Instalacoes detectadas"
                                                            FontSize="12"
-                                                           Foreground="{StaticResource TextSecondaryBrush}" />
+                                                           Foreground="{StaticResource TextMutedBrush}" />
 
                                                 <ItemsControl Margin="0,10,0,0"
                                                               ItemsSource="{Binding AfterEffectsVersions}">
@@ -606,12 +703,7 @@
                                                     </ItemsControl.ItemsPanel>
                                                     <ItemsControl.ItemTemplate>
                                                         <DataTemplate>
-                                                            <Border Margin="0,0,10,10"
-                                                                    Padding="12,7"
-                                                                    Background="#CCFFFFFF"
-                                                                    BorderBrush="#140F172A"
-                                                                    BorderThickness="1"
-                                                                    CornerRadius="14">
+                                                            <Border Style="{StaticResource PillBorderStyle}">
                                                                 <TextBlock Text="{Binding}"
                                                                            Foreground="{StaticResource TextPrimaryBrush}" />
                                                             </Border>
@@ -620,21 +712,24 @@
                                                 </ItemsControl>
 
                                                 <TextBlock Text="{Binding EnvironmentNote}"
-                                                           Foreground="{StaticResource TextSecondaryBrush}"
                                                            TextWrapping="Wrap"
+                                                           Foreground="{StaticResource TextSecondaryBrush}"
                                                            Visibility="{Binding ShowEnvironmentNote, Converter={StaticResource BooleanToVisibilityConverter}}" />
                                             </StackPanel>
                                         </Border>
 
-                                        <StackPanel Margin="0,18,0,0">
-                                            <CheckBox Content="Habilitar PlayerDebugMode do CEP automaticamente"
-                                                      IsChecked="{Binding EnableDebugMode, Mode=TwoWay}" />
-                                            <TextBlock Margin="28,8,0,0"
-                                                       Text="Recomendado para extensoes sem assinatura abrirem no After Effects."
-                                                       FontSize="12"
-                                                       Foreground="{StaticResource TextSecondaryBrush}"
-                                                       TextWrapping="Wrap" />
-                                        </StackPanel>
+                                        <Border Margin="0,18,0,0"
+                                                Style="{StaticResource InsetCardStyle}">
+                                            <StackPanel>
+                                                <CheckBox Content="Habilitar PlayerDebugMode do CEP automaticamente"
+                                                          IsChecked="{Binding EnableDebugMode, Mode=TwoWay}" />
+                                                <TextBlock Margin="28,8,0,0"
+                                                           Text="Recomendado para extensoes sem assinatura abrirem no After Effects."
+                                                           FontSize="12"
+                                                           Foreground="{StaticResource TextSecondaryBrush}"
+                                                           TextWrapping="Wrap" />
+                                            </StackPanel>
+                                        </Border>
 
                                         <Border Margin="0,18,0,0"
                                                 Style="{StaticResource InsetCardStyle}">
@@ -683,8 +778,7 @@
                                 Grid.Row="1"
                                 Margin="0,18,0,0"
                                 Style="{StaticResource InsetCardStyle}"
-                                Opacity="0"
-                                Visibility="Collapsed">
+                                Opacity="0">
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="Auto" />
@@ -694,12 +788,12 @@
                                 <Border Width="52"
                                         Height="52"
                                         CornerRadius="18"
-                                        Background="#E6FFFFFF"
-                                        BorderBrush="#140F172A"
+                                        Background="#16FFFFFF"
+                                        BorderBrush="{StaticResource SurfaceBorderBrush}"
                                         BorderThickness="1">
                                     <Grid>
-                                        <Path Data="M12,30 L24,14 L39,24 L24,38 Z"
-                                              Stroke="#FF0F9CE8"
+                                        <Path Data="M 12 30 L 24 14 L 39 24 L 24 38 Z"
+                                              Stroke="#FF33B6FF"
                                               StrokeThickness="2"
                                               Fill="Transparent"
                                               Stretch="Uniform"
@@ -709,13 +803,12 @@
 
                                 <StackPanel Grid.Column="1"
                                             Margin="18,0,0,0">
-                                    <TextBlock Text="Pos-instalacao"
-                                               FontFamily="Bahnschrift"
+                                    <TextBlock Text="Pronto para publicar no GitHub"
+                                               FontFamily="Segoe UI Semibold"
                                                FontSize="16"
-                                               FontWeight="SemiBold"
                                                Foreground="{StaticResource TextPrimaryBrush}" />
                                     <TextBlock Margin="0,6,0,0"
-                                               Text="Depois de instalar, abra ou reinicie o After Effects e procure por AeToolsKit em Janela > Extensoes."
+                                               Text="O layout novo do painel ja esta no repositorio local e sera o mesmo consumido pelo instalador assim que o update for para a branch principal."
                                                TextWrapping="Wrap"
                                                Foreground="{StaticResource TextSecondaryBrush}" />
                                 </StackPanel>
